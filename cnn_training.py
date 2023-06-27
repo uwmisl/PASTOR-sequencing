@@ -170,8 +170,7 @@ def train(model, optimizer,lmbd, epochs, criterion, train_loader): #, vld_loader
     use_cuda = False
     losses = []
     accs = []
-    for epoch in range(epochs):  # loop over the dataset multiple times
-        print("*", end='')
+    for epoch in range(epochs):
         running_loss = 0.0
         for i, data in enumerate(train_loader, 0):
             inputs, labels = data
@@ -195,7 +194,7 @@ def train(model, optimizer,lmbd, epochs, criterion, train_loader): #, vld_loader
             loss.backward()
             optimizer.step()
 
-         # below is only used for hyperparmater tuning
+### below is only used for hyperparmater tuning
             
 #         correct = 0.0
 #         total = 0.0
@@ -230,8 +229,6 @@ def top_n_cnt(y_test, test_pred, k):
             cnt += 1
     return cnt
 
-
-# if opt == 'SGD':
 batch_size = 16
 lmbd = 0
 segment_len = 100
@@ -260,8 +257,6 @@ for enum in range(20):
     
     with torch.no_grad():
         for n_attempts in range(1,len(acids)+1):
-            if top_n_experiment[enum][n_attempts-1] != 0:
-                continue
             total = 0
             correct = 0
             for data in test_loader:
