@@ -24,7 +24,6 @@ channels_arr = list(np.load(open('data/channels_arr.npy','rb')))
 chosen_runs = ['20220824_run02_a', '20220826_run02_a', '20220826_run03_a', '20220907_run01_a', '20221213_run02_a', '20221214_run01_a']
 
 # features and labels    
-feature_cols = ['median', 'max', 'middle', 'mean_abs_deriv', 'median_abs_deriv','mean','raw_std', 'dip']
 index_to_aa = [c for c in 'CSAGTVNQMILYWFPHRKDE']
 aa_to_index = {aa:i for i, aa in enumerate(index_to_aa)}
 
@@ -60,9 +59,6 @@ tr_segments = segments_df[segments_df.aa != ''][segments_df.pretty][~segments_df
 # Validation set used for testing architectures and hyperparameter tuning, but final model was trained with the entire training set
 # vl_segments = segments_df[segments_df.aa != ''][segments_df.pretty][~segments_df.run.isin(chosen_runs)][segments_df.channel <= 120]
 te_segments = segments_df[segments_df.aa != ''][segments_df.pretty][segments_df.run.isin(chosen_runs)]
-
-batch_size = 16
-
 
     
 def get_data(segment_len, batch_size, acids=index_to_aa):
