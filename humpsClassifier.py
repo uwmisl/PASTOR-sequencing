@@ -11,21 +11,6 @@ warnings.filterwarnings("ignore")
 import numpy as np
 import pandas as pd
 
-class RandomClassifier:
-    def __init__(self):
-       self.classes_ = None
-
-    def fit(self, X, y):
-        self.classes_ = np.unique(y)
-
-    def predict(self, X):
-        return random.choices(self.classes_, k=len(X))
-
-    def predict_proba(self, X):
-        rnums = [[random.random() for r in range(len(self.classes_))] for y in range(len(X))]
-        return [[r/sum(y_row) for r in y_row] for y_row in rnums]
-
-
 class HumpsClassifier:
     def __init__(self):
         self.pretty_segments_df = pd.read_pickle('data/pretty_segments_df.pkl')
@@ -137,5 +122,5 @@ class HumpsClassifier:
         # print(best_clfs)
         # return accs
         if return_clf:
-            return np.mean([a for a in accs if a >0]), accs, best_clfs
-        return np.mean([a for a in accs if a >0]), accs
+            return np.mean(accs), accs, best_clfs
+        return np.mean(accs), accs
