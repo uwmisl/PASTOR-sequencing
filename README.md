@@ -21,7 +21,7 @@ Segmented raw folded domain signals:
 * dTitin: ``segments_df_titin_vp15ee.json``
 
 Segmented raw folded domain signals with the second (N-terminal) half of the PASTOR context:
-* Amyloid Beta 15: ``segments_df_beta_15.json``
-* Amyloid Beta 42: ``segments_df_beta_42.json``
-* Titin: ``segments_df_titin_vp15.json``
-* dTitin: ``segments_df_titin_vp15ee.json``
+* Amyloid Beta 15: ``second_beta_15_segs_df.json``
+* Amyloid Beta 42: ``second_beta_42_segs_df.json``
+* Titin: ``second_titin_segs_df.json``
+* dTitin: ``second_titin_ee_segs_df.json``
