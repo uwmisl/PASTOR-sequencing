@@ -29,3 +29,11 @@ Segmented raw folded domain signals with the second (N-terminal) half of the PAS
 * Amyloid Beta 42: ``second_beta_42_segs_df.json``
 * Titin: ``second_titin_segs_df.json``
 * dTitin: ``second_titin_ee_segs_df.json``
+
+### Environment:
+1) Install miniconda: https://docs.anaconda.com/free/miniconda/miniconda-install/
+2) Run ``conda env create -f environment.yml`` Should take ~20 minutes
+Code has only been tested on versions specified in the yml file and on MacOS
+
+### Demo:
+Expected results of files should match (barring variability from randomness) data seen in rereads_acc.npy, channels_arr.npy, pretty_segments_df.json, the images created and saved within .ipynb files, and the results seen in the manuscript. All code should take <5 min to run, unless otherwise specified in the comments (e.g. pairwise DTW comparison YetAnotherYYSegmenter.ipynb, reread simulation).
