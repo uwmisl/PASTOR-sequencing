@@ -18,7 +18,7 @@ Segmented raw and processed P1-P4 signals: ``yy_mutants.json`` \
 Ordering of channels in the DTW-distance features, as created in YetAnotherYYSegmenter.ipynb and used in humpsClassifier:``channels_arr.npy``\
 Segmented raw and processed PASTOR signals: ``pretty_segments_df.json`` \
 Segmented raw and processed PASTOR-VGDNY signals in deamidation catalyzing conditions: ``n_to_d_segments_df.json``\
-Manually labeled YY dips for ClpX stepping analysis: ``traces_df_sy.json`` \
+Manually labeled YY dips for ClpX stepping analysis: ``pretty_df.json`` \
 Reread simulation results, as created in rereads_simulation.ipynb and used in encoding_decoding.ipynb: ``rereads_acc.npy`` \
 Barcode accuracy evaluation results, as created in encoding_decoding.ipynb: all contents in ``barcode_results`` \
 Segmented raw folded domain signals:
