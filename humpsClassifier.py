@@ -13,7 +13,8 @@ import pandas as pd
 
 class HumpsClassifier:
     def __init__(self):
-        self.pretty_segments_df = pd.read_pickle('data/pretty_segments_df.pkl')
+        self.pretty_segments_df = pd.read_json('data/pretty_segments_df.json')
+        self.pretty_segments_df['features'] = self.pretty_segments_df['features'].apply(np.array)
         self.channels_arr = list(np.load(open('data/channels_arr.npy','rb')))
         self.feature_cols = ['median', 'max', 'middle', 'mean_abs_deriv', 'median_abs_deriv','mean','raw_std', 'dip']
         index_to_aa = [c for c in 'CSAGTVNQMILYWFPHRKDE']
@@ -66,9 +67,9 @@ class HumpsClassifier:
 
             # upsample minority residues in the TRAINING SET only
             for i, AA_minority in enumerate(acids):
-                if AA_minority == biggest_aa:
+                if AA_minority == biggest_aa or target_cnt == lens[i]:
                     continue
-                assert target_cnt >= lens[i]
+                assert target_cnt > lens[i]
                 re_balance = target_cnt - lens[i]
                 df_minority_upsampled = resample(dfs[i], 
                                                     replace=True,     # sample with replacement
