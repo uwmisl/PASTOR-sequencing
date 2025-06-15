@@ -1,5 +1,6 @@
 # PASTOR-sequencing
 ### Code files:
+Loading and alignment of of P1-P4 proteints: ``p1_p4.ipynb`` \
 Extracting segments: ``translocation_finder.py`` \
 Segmentation of PASTORs into VRs and YY dips, and featurization of VRs: ``YetAnotherYYSegmenter.ipynb`` \
 Sequence -> signal model: ``squiggler.py`` \
